@@ -1,0 +1,89 @@
+
+{
+    "groceries" : [
+        {
+        "prd_id": 1,
+        "title": "Apple",
+        "prd_image": "apple",
+        "descriptions": "Lorem ipsum doalr sit",
+        "price": 3.55
+        },
+        
+        {
+        "prd_id": 2,
+        "title": "WaterMelon",
+        "prd_image": "watermelon",
+        "descriptions": "Lorem ipsum doalr sit",
+        "price": 4.99
+        },
+        
+        {
+        "prd_id": 3,
+        "title": "Green Grapes",
+        "prd_image": "greengrapes",
+        "descriptions": "Lorem ipsum doalr sit",
+        "price": 5.99
+        },
+        
+        
+        {
+        "prd_id": 4,
+        "title": "Red Grapes",
+        "prd_image": "redgrapes",
+        "descriptions": "Lorem ipsum doalr sit",
+        "price": 2.99
+        },
+        
+        {
+        "prd_id": 5,
+        "title": "Strawberry",
+        "prd_image": "strawberry",
+        "descriptions": "Lorem ipsum doalr sit",
+        "price": 6.99
+        },
+        {
+        "prd_id": 6,
+        "title": "Apple",
+        "prd_image": "apple",
+        "descriptions": "Lorem ipsum doalr sit",
+        "price": 3.55
+        },
+        
+        {
+        "prd_id": 7,
+        "title": "WaterMelon",
+        "prd_image": "watermelon",
+        "descriptions": "Lorem ipsum doalr sit",
+        "price": 4.99
+        },
+        
+        {
+        "prd_id": 8,
+        "title": "Green Grapes",
+        "prd_image": "greengrapes",
+        "descriptions": "Lorem ipsum doalr sitLorem ipsum doalr sitLorem ipsum doalr sitLorem ipsum doalr sitLorem ipsum doalr sitLorem ipsum doalr sitLorem ipsum doalr sitLorem ipsum doalr sitLorem ipsum doalr sitLorem ipsum doalr sitLorem ipsum doalr sitLorem ipsum doalr sitLorem ipsum doalr sitLorem ipsum doalr sitLorem ipsum doalr sit",
+        "price": 5.99
+        },
+        
+        
+        {
+        "prd_id": 9,
+        "title": "Red Grapes",
+        "prd_image": "redgrapes",
+        "descriptions": "Lorem ipsum doalr sit",
+        "price": 2.99
+        },
+        
+        {
+        "prd_id": 10,
+        "title": "Strawberry",
+        "prd_image": "strawberry",
+        "descriptions": "Lorem ipsum doalr sit",
+        "price": 6.99
+        },
+        
+        
+        
+        
+    ]
+}

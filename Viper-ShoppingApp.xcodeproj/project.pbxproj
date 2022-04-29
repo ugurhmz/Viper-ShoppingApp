@@ -9,17 +9,39 @@
 /* Begin PBXBuildFile section */
 		63FD8280281C1383000CAB65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD827F281C1383000CAB65 /* AppDelegate.swift */; };
 		63FD8282281C1383000CAB65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD8281281C1383000CAB65 /* SceneDelegate.swift */; };
-		63FD8284281C1383000CAB65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD8283281C1383000CAB65 /* ViewController.swift */; };
+		63FD8284281C1383000CAB65 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD8283281C1383000CAB65 /* HomeVC.swift */; };
 		63FD8289281C1384000CAB65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FD8288281C1384000CAB65 /* Assets.xcassets */; };
+		63FD829B281C1534000CAB65 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD829A281C1534000CAB65 /* HomeInteractor.swift */; };
+		63FD829D281C1547000CAB65 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD829C281C1547000CAB65 /* HomePresenter.swift */; };
+		63FD829F281C1553000CAB65 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD829E281C1553000CAB65 /* HomeRouter.swift */; };
+		63FD82A1281C1564000CAB65 /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD82A0281C1564000CAB65 /* HomeBuilder.swift */; };
+		63FD82A3281C1618000CAB65 /* NavigationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD82A2281C1618000CAB65 /* NavigationBuilder.swift */; };
+		63FD82A5281C1823000CAB65 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD82A4281C1823000CAB65 /* WebService.swift */; };
+		63FD82A7281C1887000CAB65 /* GroceryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD82A6281C1887000CAB65 /* GroceryModel.swift */; };
+		63FD82AA281C1A0E000CAB65 /* HomeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD82A9281C1A0E000CAB65 /* HomeTableCell.swift */; };
+		63FD82AC281C1A32000CAB65 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD82AB281C1A32000CAB65 /* Extension+UIView.swift */; };
+		63FD82AE281C237F000CAB65 /* TopHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD82AD281C237F000CAB65 /* TopHeaderUIView.swift */; };
+		63FD82B3281C28D2000CAB65 /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = 63FD82B2281C28D2000CAB65 /* products.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		63FD827C281C1383000CAB65 /* Viper-ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Viper-ShoppingApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FD827F281C1383000CAB65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63FD8281281C1383000CAB65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		63FD8283281C1383000CAB65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		63FD8283281C1383000CAB65 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		63FD8288281C1384000CAB65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63FD828D281C1384000CAB65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63FD829A281C1534000CAB65 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		63FD829C281C1547000CAB65 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		63FD829E281C1553000CAB65 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		63FD82A0281C1564000CAB65 /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
+		63FD82A2281C1618000CAB65 /* NavigationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBuilder.swift; sourceTree = "<group>"; };
+		63FD82A4281C1823000CAB65 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		63FD82A6281C1887000CAB65 /* GroceryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryModel.swift; sourceTree = "<group>"; };
+		63FD82A9281C1A0E000CAB65 /* HomeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableCell.swift; sourceTree = "<group>"; };
+		63FD82AB281C1A32000CAB65 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		63FD82AD281C237F000CAB65 /* TopHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeaderUIView.swift; sourceTree = "<group>"; };
+		63FD82B2281C28D2000CAB65 /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +74,14 @@
 		63FD827E281C1383000CAB65 /* Viper-ShoppingApp */ = {
 			isa = PBXGroup;
 			children = (
+				63FD82B2281C28D2000CAB65 /* products.json */,
 				63FD8296281C1418000CAB65 /* Navigation */,
-				63FD8295281C1409000CAB65 /* HomeModule */,
+				63FD8299281C14E8000CAB65 /* Network */,
+				63FD8298281C14E1000CAB65 /* Extension */,
+				63FD8297281C14DB000CAB65 /* Cells */,
 				63FD8294281C1403000CAB65 /* Model */,
 				63FD8293281C13FD000CAB65 /* Core */,
-				63FD8283281C1383000CAB65 /* ViewController.swift */,
+				63FD8295281C1409000CAB65 /* HomeModule */,
 			);
 			path = "Viper-ShoppingApp";
 			sourceTree = "<group>";
@@ -75,6 +100,7 @@
 		63FD8294281C1403000CAB65 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				63FD82A6281C1887000CAB65 /* GroceryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -82,6 +108,11 @@
 		63FD8295281C1409000CAB65 /* HomeModule */ = {
 			isa = PBXGroup;
 			children = (
+				63FD8283281C1383000CAB65 /* HomeVC.swift */,
+				63FD829A281C1534000CAB65 /* HomeInteractor.swift */,
+				63FD829C281C1547000CAB65 /* HomePresenter.swift */,
+				63FD829E281C1553000CAB65 /* HomeRouter.swift */,
+				63FD82A0281C1564000CAB65 /* HomeBuilder.swift */,
 			);
 			path = HomeModule;
 			sourceTree = "<group>";
@@ -89,8 +120,42 @@
 		63FD8296281C1418000CAB65 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				63FD82A2281C1618000CAB65 /* NavigationBuilder.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		63FD8297281C14DB000CAB65 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				63FD82A8281C19FD000CAB65 /* HomeCells */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		63FD8298281C14E1000CAB65 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				63FD82AB281C1A32000CAB65 /* Extension+UIView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		63FD8299281C14E8000CAB65 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				63FD82A4281C1823000CAB65 /* WebService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		63FD82A8281C19FD000CAB65 /* HomeCells */ = {
+			isa = PBXGroup;
+			children = (
+				63FD82A9281C1A0E000CAB65 /* HomeTableCell.swift */,
+				63FD82AD281C237F000CAB65 /* TopHeaderUIView.swift */,
+			);
+			path = HomeCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63FD8289281C1384000CAB65 /* Assets.xcassets in Resources */,
+				63FD82B3281C28D2000CAB65 /* products.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,9 +228,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63FD8284281C1383000CAB65 /* ViewController.swift in Sources */,
+				63FD82AA281C1A0E000CAB65 /* HomeTableCell.swift in Sources */,
+				63FD82A5281C1823000CAB65 /* WebService.swift in Sources */,
+				63FD82AC281C1A32000CAB65 /* Extension+UIView.swift in Sources */,
+				63FD82A7281C1887000CAB65 /* GroceryModel.swift in Sources */,
+				63FD8284281C1383000CAB65 /* HomeVC.swift in Sources */,
+				63FD82A3281C1618000CAB65 /* NavigationBuilder.swift in Sources */,
+				63FD82AE281C237F000CAB65 /* TopHeaderUIView.swift in Sources */,
+				63FD829F281C1553000CAB65 /* HomeRouter.swift in Sources */,
 				63FD8280281C1383000CAB65 /* AppDelegate.swift in Sources */,
+				63FD82A1281C1564000CAB65 /* HomeBuilder.swift in Sources */,
 				63FD8282281C1383000CAB65 /* SceneDelegate.swift in Sources */,
+				63FD829D281C1547000CAB65 /* HomePresenter.swift in Sources */,
+				63FD829B281C1534000CAB65 /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
