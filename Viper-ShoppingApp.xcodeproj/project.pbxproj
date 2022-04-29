@@ -22,9 +22,13 @@
 		63FD82AC281C1A32000CAB65 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD82AB281C1A32000CAB65 /* Extension+UIView.swift */; };
 		63FD82AE281C237F000CAB65 /* TopHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD82AD281C237F000CAB65 /* TopHeaderUIView.swift */; };
 		63FD82B3281C28D2000CAB65 /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = 63FD82B2281C28D2000CAB65 /* products.json */; };
+		63FD82B6281C362C000CAB65 /* RealmDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD82B5281C362C000CAB65 /* RealmDataBase.swift */; };
+		63FD82B8281C3686000CAB65 /* CartDbProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD82B7281C3686000CAB65 /* CartDbProtocol.swift */; };
+		CE89729973FC83A6A0CE648F /* Pods_Viper_ShoppingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23CC832EC168E9594BBBBEE /* Pods_Viper_ShoppingApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15B67B5349EDE52B8513236C /* Pods-Viper-ShoppingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viper-ShoppingApp.release.xcconfig"; path = "Target Support Files/Pods-Viper-ShoppingApp/Pods-Viper-ShoppingApp.release.xcconfig"; sourceTree = "<group>"; };
 		63FD827C281C1383000CAB65 /* Viper-ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Viper-ShoppingApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FD827F281C1383000CAB65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63FD8281281C1383000CAB65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +46,10 @@
 		63FD82AB281C1A32000CAB65 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		63FD82AD281C237F000CAB65 /* TopHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeaderUIView.swift; sourceTree = "<group>"; };
 		63FD82B2281C28D2000CAB65 /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
+		63FD82B5281C362C000CAB65 /* RealmDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataBase.swift; sourceTree = "<group>"; };
+		63FD82B7281C3686000CAB65 /* CartDbProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDbProtocol.swift; sourceTree = "<group>"; };
+		786F1F99D47E59928E1028A6 /* Pods-Viper-ShoppingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viper-ShoppingApp.debug.xcconfig"; path = "Target Support Files/Pods-Viper-ShoppingApp/Pods-Viper-ShoppingApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A23CC832EC168E9594BBBBEE /* Pods_Viper_ShoppingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Viper_ShoppingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +57,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE89729973FC83A6A0CE648F /* Pods_Viper_ShoppingApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EEC8352A3084D156F25E130 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				786F1F99D47E59928E1028A6 /* Pods-Viper-ShoppingApp.debug.xcconfig */,
+				15B67B5349EDE52B8513236C /* Pods-Viper-ShoppingApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		63FD8273281C1383000CAB65 = {
 			isa = PBXGroup;
 			children = (
 				63FD827E281C1383000CAB65 /* Viper-ShoppingApp */,
 				63FD827D281C1383000CAB65 /* Products */,
+				4EEC8352A3084D156F25E130 /* Pods */,
+				B9110A2529A7A142ADD1BBB1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +95,7 @@
 		63FD827E281C1383000CAB65 /* Viper-ShoppingApp */ = {
 			isa = PBXGroup;
 			children = (
+				63FD82B4281C3608000CAB65 /* DataBase */,
 				63FD82B2281C28D2000CAB65 /* products.json */,
 				63FD8296281C1418000CAB65 /* Navigation */,
 				63FD8299281C14E8000CAB65 /* Network */,
@@ -158,6 +180,31 @@
 			path = HomeCells;
 			sourceTree = "<group>";
 		};
+		63FD82B4281C3608000CAB65 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				63FD82B9281C3761000CAB65 /* Entity */,
+				63FD82B5281C362C000CAB65 /* RealmDataBase.swift */,
+				63FD82B7281C3686000CAB65 /* CartDbProtocol.swift */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		63FD82B9281C3761000CAB65 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B9110A2529A7A142ADD1BBB1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A23CC832EC168E9594BBBBEE /* Pods_Viper_ShoppingApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,9 +212,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63FD8290281C1384000CAB65 /* Build configuration list for PBXNativeTarget "Viper-ShoppingApp" */;
 			buildPhases = (
+				D13B452B0FFB113CAF6DAA77 /* [CP] Check Pods Manifest.lock */,
 				63FD8278281C1383000CAB65 /* Sources */,
 				63FD8279281C1383000CAB65 /* Frameworks */,
 				63FD827A281C1383000CAB65 /* Resources */,
+				4F3FE90A3ADF7447799A2A4D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -223,6 +272,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4F3FE90A3ADF7447799A2A4D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Viper-ShoppingApp/Pods-Viper-ShoppingApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Viper-ShoppingApp/Pods-Viper-ShoppingApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Viper-ShoppingApp/Pods-Viper-ShoppingApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D13B452B0FFB113CAF6DAA77 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Viper-ShoppingApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		63FD8278281C1383000CAB65 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -230,6 +321,7 @@
 			files = (
 				63FD82AA281C1A0E000CAB65 /* HomeTableCell.swift in Sources */,
 				63FD82A5281C1823000CAB65 /* WebService.swift in Sources */,
+				63FD82B6281C362C000CAB65 /* RealmDataBase.swift in Sources */,
 				63FD82AC281C1A32000CAB65 /* Extension+UIView.swift in Sources */,
 				63FD82A7281C1887000CAB65 /* GroceryModel.swift in Sources */,
 				63FD8284281C1383000CAB65 /* HomeVC.swift in Sources */,
@@ -239,6 +331,7 @@
 				63FD8280281C1383000CAB65 /* AppDelegate.swift in Sources */,
 				63FD82A1281C1564000CAB65 /* HomeBuilder.swift in Sources */,
 				63FD8282281C1383000CAB65 /* SceneDelegate.swift in Sources */,
+				63FD82B8281C3686000CAB65 /* CartDbProtocol.swift in Sources */,
 				63FD829D281C1547000CAB65 /* HomePresenter.swift in Sources */,
 				63FD829B281C1534000CAB65 /* HomeInteractor.swift in Sources */,
 			);
@@ -365,6 +458,7 @@
 		};
 		63FD8291281C1384000CAB65 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 786F1F99D47E59928E1028A6 /* Pods-Viper-ShoppingApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -392,6 +486,7 @@
 		};
 		63FD8292281C1384000CAB65 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15B67B5349EDE52B8513236C /* Pods-Viper-ShoppingApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
