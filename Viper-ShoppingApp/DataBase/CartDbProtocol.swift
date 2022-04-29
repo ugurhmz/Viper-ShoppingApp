@@ -9,5 +9,5 @@ import Foundation
 
 
 protocol CartDbProtocol {
-    func updateCart() -> (Bool)
+    func updateCart(using cartItem: CartItemModel) -> (Bool)
 }

@@ -18,7 +18,7 @@ class HomeBuilder {
         view.title = "Fresh Groceries"
         
         // class's
-        let interactor = HomeInteractor(service: WebService.shared)
+        let interactor = HomeInteractor(service: WebService.shared, database: RealmDataBase.shared)
         let router = HomeRouter(view: view)
         let presenter = HomePresenter(view: view, interactor: interactor, router:  router)
         

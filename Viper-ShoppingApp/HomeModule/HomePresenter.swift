@@ -9,12 +9,11 @@ import Foundation
 
 protocol HomePresenterProtocol {
     func viewDidLoad() -> Void
-   // func onAddToCart(prdItem: PrdItem) -> Void
+    func onAddToCart(prdItem: PrdItem) -> Void
 }
 
 
 class HomePresenter: HomePresenterProtocol {
-    
     
     
     weak var view: HomeViewProtocol?
@@ -28,6 +27,7 @@ class HomePresenter: HomePresenterProtocol {
         
     }
     
+    //
     func viewDidLoad() {
         
         DispatchQueue.global(qos: .background).async { [weak self] in
@@ -46,6 +46,21 @@ class HomePresenter: HomePresenterProtocol {
             })
         }
     }
+    
+    
+    // onAddToCart
+    func onAddToCart(prdItem: PrdItem) -> Void {
+        
+        DispatchQueue.global(qos: .background).async {
+            let updated = self.interactor.addToCart(prdItem: prdItem)
+            print("Add to cart updated with result = \(updated)")
+            
+            DispatchQueue.main.async {
+                // Respond back to UI sayins updated
+            }
+        }
+    }
+    
     
     
 }

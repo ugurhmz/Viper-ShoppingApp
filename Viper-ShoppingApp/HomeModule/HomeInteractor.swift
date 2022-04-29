@@ -13,17 +13,19 @@ typealias PrdItem = (prdId: String, quantity: Int)
 protocol HomeInteractorProtocol {
     //func getTitleFromDB() -> HomeModel
     func getGroceries(completion: GroceriesClosure) -> (Void)
-    //func addToCart(prdItem: PrdItem) -> (Bool)
+    func addToCart(prdItem: PrdItem) -> (Bool)
 }
 
 
 class HomeInteractor: HomeInteractorProtocol {
     
     var service: GroceriesAPI
-    init(service: GroceriesAPI){
-        self.service = service
-    }
+    var database: CartDbProtocol
     
+    init(service: GroceriesAPI, database: CartDbProtocol){
+        self.service = service
+        self.database = database
+    }
     
     // get all
     func getGroceries(completion: (GroceryResult) -> (Void)) {
@@ -34,10 +36,10 @@ class HomeInteractor: HomeInteractorProtocol {
     }
     
     
-//    // addToCart
-//    func addToCart(prdItem: PrdItem) -> Bool {
-//       return self.database.updateCart(using: CartItem(prdId: prdItem.prdId, value: prdItem.quantity))
-//    }
-//
+    // addToCart
+    func addToCart(prdItem: PrdItem) -> Bool {
+       return self.database.updateCart(using: CartItemModel(prdId: prdItem.prdId, value: prdItem.quantity))
+    }
+
 }
 

@@ -24,6 +24,8 @@
 		63FD82B3281C28D2000CAB65 /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = 63FD82B2281C28D2000CAB65 /* products.json */; };
 		63FD82B6281C362C000CAB65 /* RealmDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD82B5281C362C000CAB65 /* RealmDataBase.swift */; };
 		63FD82B8281C3686000CAB65 /* CartDbProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD82B7281C3686000CAB65 /* CartDbProtocol.swift */; };
+		63FD82BB281C3859000CAB65 /* RealmCartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD82BA281C3859000CAB65 /* RealmCartItem.swift */; };
+		63FD82BD281C38EA000CAB65 /* CartItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD82BC281C38EA000CAB65 /* CartItemModel.swift */; };
 		CE89729973FC83A6A0CE648F /* Pods_Viper_ShoppingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23CC832EC168E9594BBBBEE /* Pods_Viper_ShoppingApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,8 @@
 		63FD82B2281C28D2000CAB65 /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
 		63FD82B5281C362C000CAB65 /* RealmDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataBase.swift; sourceTree = "<group>"; };
 		63FD82B7281C3686000CAB65 /* CartDbProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDbProtocol.swift; sourceTree = "<group>"; };
+		63FD82BA281C3859000CAB65 /* RealmCartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCartItem.swift; sourceTree = "<group>"; };
+		63FD82BC281C38EA000CAB65 /* CartItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemModel.swift; sourceTree = "<group>"; };
 		786F1F99D47E59928E1028A6 /* Pods-Viper-ShoppingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viper-ShoppingApp.debug.xcconfig"; path = "Target Support Files/Pods-Viper-ShoppingApp/Pods-Viper-ShoppingApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A23CC832EC168E9594BBBBEE /* Pods_Viper_ShoppingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Viper_ShoppingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -70,7 +74,6 @@
 				786F1F99D47E59928E1028A6 /* Pods-Viper-ShoppingApp.debug.xcconfig */,
 				15B67B5349EDE52B8513236C /* Pods-Viper-ShoppingApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -123,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				63FD82A6281C1887000CAB65 /* GroceryModel.swift */,
+				63FD82BC281C38EA000CAB65 /* CartItemModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,6 +197,7 @@
 		63FD82B9281C3761000CAB65 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				63FD82BA281C3859000CAB65 /* RealmCartItem.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -327,9 +332,11 @@
 				63FD8284281C1383000CAB65 /* HomeVC.swift in Sources */,
 				63FD82A3281C1618000CAB65 /* NavigationBuilder.swift in Sources */,
 				63FD82AE281C237F000CAB65 /* TopHeaderUIView.swift in Sources */,
+				63FD82BB281C3859000CAB65 /* RealmCartItem.swift in Sources */,
 				63FD829F281C1553000CAB65 /* HomeRouter.swift in Sources */,
 				63FD8280281C1383000CAB65 /* AppDelegate.swift in Sources */,
 				63FD82A1281C1564000CAB65 /* HomeBuilder.swift in Sources */,
+				63FD82BD281C38EA000CAB65 /* CartItemModel.swift in Sources */,
 				63FD8282281C1383000CAB65 /* SceneDelegate.swift in Sources */,
 				63FD82B8281C3686000CAB65 /* CartDbProtocol.swift in Sources */,
 				63FD829D281C1547000CAB65 /* HomePresenter.swift in Sources */,
