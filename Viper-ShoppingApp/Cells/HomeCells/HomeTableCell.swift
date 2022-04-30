@@ -16,6 +16,22 @@ import UIKit
 class HomeTableCell: UITableViewCell {
     static var identifier = "HomeTableCell"
     
+    var stepperValue: Int = 0 {
+        didSet {
+            let isHidden = (stepperValue > 0)
+            
+            addBagBtn.isHidden = isHidden
+            plusBtn.isHidden = !isHidden
+            minusBtn.isHidden = !isHidden
+            stepperCountLbl.isHidden = !isHidden
+            stepperCountLbl.text = "\(stepperValue)"
+        }
+    }
+    
+    var myPresenter: HomePresenterProtocol?
+    
+    var prdImageStr: String = ""
+    
     private let imgView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
@@ -56,13 +72,70 @@ class HomeTableCell: UITableViewCell {
     private let addBagBtn: UIButton = {
         let buton = UIButton()
         buton.setTitle("ADD TO BAG", for: .normal)
-        buton.tintColor = .white
         buton.backgroundColor = UIColor(red: 197/255, green: 33/255, blue: 52/255, alpha: 1)
         buton.layer.cornerRadius = 15
         buton.contentEdgeInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
         buton.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
+        
+        buton.addTarget(self, action: #selector(addToClick), for: .touchUpInside)
         return buton
     }()
+    
+    
+    private let plusBtn: UIButton = {
+        let buton = UIButton()
+        buton.setTitle("+", for: .normal)
+        buton.backgroundColor = .systemOrange
+        buton.setTitleColor(.white, for: .normal)
+        buton.layer.cornerRadius = 15
+        buton.contentEdgeInsets = UIEdgeInsets(top: 2, left: 7, bottom: 0, right: 2)
+        buton.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        
+        buton.addTarget(self, action: #selector(incrementBtn), for: .touchUpInside)
+        return buton
+    }()
+    
+    private let minusBtn: UIButton = {
+        let buton = UIButton()
+        buton.setTitle("-", for: .normal)
+        buton.backgroundColor = .systemOrange
+        buton.setTitleColor(.white, for: .normal)
+        buton.layer.cornerRadius = 15
+        buton.contentEdgeInsets = UIEdgeInsets(top: 2, left: 7, bottom: 0, right: 2)
+        buton.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        
+        buton.addTarget(self, action: #selector(decrementBtn), for: .touchUpInside)
+        return buton
+    }()
+    
+    private let stepperCountLbl: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.text = "0"
+        label.textColor = .black
+        label.textAlignment = .center
+        
+        return label
+    }()
+    
+    
+    
+    @objc func addToClick(){
+       stepperValue = 1
+        
+    }
+    
+    @objc func incrementBtn(){
+        stepperValue += 1
+        print("\(stepperValue)")
+    }
+    
+    @objc func decrementBtn(){
+        stepperValue -= 1
+        
+        print("\(stepperValue)")
+    }
+    
     
     
     
@@ -75,11 +148,27 @@ class HomeTableCell: UITableViewCell {
         return stackView
     }()
     
+    private let btnStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        stackView.distribution = .fillProportionally
+        
+        return stackView
+    }()
+    
+    
+    
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        [imgView, stackView, addBagBtn].forEach{contentView.addSubview($0)}
+        [imgView, stackView, btnStackView].forEach{contentView.addSubview($0)}
         [prdTitleLbl, prdDescriptionLbl, prdPriceLbl].forEach{ stackView.addArrangedSubview($0)}
+        
+        
+        [minusBtn, stepperCountLbl, plusBtn ,addBagBtn].forEach{ btnStackView.addArrangedSubview($0)}
+        
         
         setConstraints()
         stackView.setCustomSpacing(-15, after: prdTitleLbl)
@@ -98,6 +187,7 @@ extension HomeTableCell {
     func configure(groceryItem: GroceryItemGenerator){
         self.prdTitleLbl.text = groceryItem.title
         self.imgView.image = UIImage(named: "\(groceryItem.prdImage)")
+        self.prdImageStr = groceryItem.prdImage
         self.prdDescriptionLbl.text = groceryItem.descriptions
         self.prdPriceLbl.text = "$ \(groceryItem.price)"
     }
@@ -122,14 +212,22 @@ extension HomeTableCell {
                            bottom: contentView.bottomAnchor,
                            trailing: contentView.trailingAnchor,
                            padding: .init(top: 0, left: 35, bottom: 0, right: 0))
-        
+
         addBagBtn.anchor(top: nil,
                          leading: prdPriceLbl.trailingAnchor,
                          bottom:stackView.bottomAnchor,
                          trailing: stackView.trailingAnchor,
                          padding: .init(top: 0, left: 15, bottom: 10, right: 10),
-                         size: .init(width: 140, height: 50)
-        )
+                         size: .init(width: 170, height: 50))
+        
+        
+        btnStackView.anchor(top: nil,
+                         leading: prdPriceLbl.trailingAnchor,
+                         bottom:stackView.bottomAnchor,
+                         trailing: stackView.trailingAnchor,
+                         padding: .init(top: 0, left: 15, bottom: 5, right: 10),
+                         size: .init(width: 140, height: 50))
+        
     }
 }
 
