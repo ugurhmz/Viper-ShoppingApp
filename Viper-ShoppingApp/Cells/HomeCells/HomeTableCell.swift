@@ -16,15 +16,17 @@ import UIKit
 class HomeTableCell: UITableViewCell {
     static var identifier = "HomeTableCell"
     
-    var stepperValue: Int = 0 {
+    var closure: BagClosure?
+    
+    var viewModel: AddBagViewModel! {
         didSet {
-            let isHidden = (stepperValue > 0)
+            let isHidden =  viewModel.showStepper
             
             addBagBtn.isHidden = isHidden
             plusBtn.isHidden = !isHidden
             minusBtn.isHidden = !isHidden
             stepperCountLbl.isHidden = !isHidden
-            stepperCountLbl.text = "\(stepperValue)"
+            stepperCountLbl.text = "\(viewModel.stepValue)"
         }
     }
     
@@ -121,19 +123,18 @@ class HomeTableCell: UITableViewCell {
     
     
     @objc func addToClick(){
-       stepperValue = 1
-        
+        self.viewModel = self.viewModel.onAddtoBag()
+        self.closure?(self.viewModel.stepValue)
     }
     
     @objc func incrementBtn(){
-        stepperValue += 1
-        print("\(stepperValue)")
+        self.viewModel = self.viewModel.onIncrement()
+        self.closure?(self.viewModel.stepValue)
     }
     
     @objc func decrementBtn(){
-        stepperValue -= 1
-        
-        print("\(stepperValue)")
+        self.viewModel = self.viewModel.onDecrement()
+        self.closure?(self.viewModel.stepValue)
     }
     
     
@@ -158,6 +159,15 @@ class HomeTableCell: UITableViewCell {
     }()
     
     
+    typealias BagClosure = (Int) -> ()
+    
+    //add to bag closure
+    func addToBagClosure(usingViewModel viewModel: AddBagViewModel, bagClosure: @escaping BagClosure) -> Void {
+        self.viewModel = viewModel
+        self.addBagBtn.setTitle(viewModel.title, for: .normal)
+        self.closure = bagClosure
+    }
+    
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -180,6 +190,8 @@ class HomeTableCell: UITableViewCell {
     }
     
 }
+
+
 
 
 //MARK: -  Fill data
@@ -220,14 +232,45 @@ extension HomeTableCell {
                          padding: .init(top: 0, left: 15, bottom: 10, right: 10),
                          size: .init(width: 170, height: 50))
         
-        
         btnStackView.anchor(top: nil,
                          leading: prdPriceLbl.trailingAnchor,
                          bottom:stackView.bottomAnchor,
                          trailing: stackView.trailingAnchor,
                          padding: .init(top: 0, left: 15, bottom: 5, right: 10),
                          size: .init(width: 140, height: 50))
-        
     }
 }
 
+
+
+//MARK: -
+struct AddBagViewModel {
+    let title: String
+    let stepValue: Int
+    let showStepper: Bool
+    
+    init(title: String, stepValue: Int){
+        self.title = title
+        self.stepValue = stepValue
+        self.showStepper = stepValue > 0
+    }
+}
+
+
+//MARK: -
+extension AddBagViewModel {
+    
+    func onAddtoBag() -> AddBagViewModel {
+        return AddBagViewModel(title: self.title, stepValue: 1)
+    }
+    
+    func onIncrement() -> AddBagViewModel {
+        guard self.stepValue < 10 else { return self}
+        return AddBagViewModel(title: self.title, stepValue: self.stepValue + 1)
+    }
+    
+    func onDecrement() -> AddBagViewModel {
+        return AddBagViewModel(title: self.title, stepValue: self.stepValue - 1)
+    }
+    
+}

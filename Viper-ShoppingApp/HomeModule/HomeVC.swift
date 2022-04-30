@@ -99,6 +99,13 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.configure(groceryItem: self.groceryItemList[indexPath.row])
             
+        
+        // add to bag trigger
+        let viewModel = AddBagViewModel(title: "Add to bag", stepValue: 0)
+        cell.addToBagClosure(usingViewModel: viewModel) { (val) in
+            print("val \(val)")
+        }
+        
         cell.layer.borderWidth = 0.6
         cell.layer.borderColor = UIColor.lightGray.cgColor
        
