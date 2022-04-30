@@ -9,10 +9,10 @@ import Foundation
 
 
 struct CartItemModel {
-    let prdId: String
+    let prdId: Int
     let value: Int
     
-    init(prdId: String, value: Int){
+    init(prdId: Int, value: Int){
         self.prdId = prdId
         self.value = value
     }

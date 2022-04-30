@@ -12,6 +12,7 @@ import Foundation
 import Foundation
 import UIKit
 
+typealias BagClosure = ((prdId: Int, stepValue: Int)) -> ()
 
 class HomeTableCell: UITableViewCell {
     static var identifier = "HomeTableCell"
@@ -87,7 +88,7 @@ class HomeTableCell: UITableViewCell {
     private let plusBtn: UIButton = {
         let buton = UIButton()
         buton.setTitle("+", for: .normal)
-        buton.backgroundColor = .systemOrange
+        buton.backgroundColor = UIColor(red: 197/255, green: 33/255, blue: 52/255, alpha: 1)
         buton.setTitleColor(.white, for: .normal)
         buton.layer.cornerRadius = 15
         buton.contentEdgeInsets = UIEdgeInsets(top: 2, left: 7, bottom: 0, right: 2)
@@ -100,7 +101,7 @@ class HomeTableCell: UITableViewCell {
     private let minusBtn: UIButton = {
         let buton = UIButton()
         buton.setTitle("-", for: .normal)
-        buton.backgroundColor = .systemOrange
+        buton.backgroundColor = UIColor(red: 197/255, green: 33/255, blue: 52/255, alpha: 1)
         buton.setTitleColor(.white, for: .normal)
         buton.layer.cornerRadius = 15
         buton.contentEdgeInsets = UIEdgeInsets(top: 2, left: 7, bottom: 0, right: 2)
@@ -123,18 +124,18 @@ class HomeTableCell: UITableViewCell {
     
     
     @objc func addToClick(){
-        self.viewModel = self.viewModel.onAddtoBag()
-        self.closure?(self.viewModel.stepValue)
+        self.viewModel = viewModel.onAddtoBag()
+        closure?((viewModel.prdId, viewModel.stepValue))
     }
     
     @objc func incrementBtn(){
-        self.viewModel = self.viewModel.onIncrement()
-        self.closure?(self.viewModel.stepValue)
+        self.viewModel = viewModel.onIncrement()
+        closure?((viewModel.prdId, viewModel.stepValue))
     }
     
     @objc func decrementBtn(){
-        self.viewModel = self.viewModel.onDecrement()
-        self.closure?(self.viewModel.stepValue)
+        self.viewModel = viewModel.onDecrement()
+        closure?((viewModel.prdId, viewModel.stepValue))
     }
     
     
@@ -159,10 +160,12 @@ class HomeTableCell: UITableViewCell {
     }()
     
     
-    typealias BagClosure = (Int) -> ()
+    
     
     //add to bag closure
-    func addToBagClosure(usingViewModel viewModel: AddBagViewModel, bagClosure: @escaping BagClosure) -> Void {
+    func addToBagClosure(usingViewModel viewModel: AddBagViewModel,
+                         bagClosure: @escaping BagClosure) -> Void {
+        
         self.viewModel = viewModel
         self.addBagBtn.setTitle(viewModel.title, for: .normal)
         self.closure = bagClosure
@@ -196,12 +199,16 @@ class HomeTableCell: UITableViewCell {
 
 //MARK: -  Fill data
 extension HomeTableCell {
-    func configure(groceryItem: GroceryItemGenerator){
+    func configure(groceryItem: GroceryItemGenerator , addToBagClosure: @escaping BagClosure ){
         self.prdTitleLbl.text = groceryItem.title
         self.imgView.image = UIImage(named: "\(groceryItem.prdImage)")
         self.prdImageStr = groceryItem.prdImage
         self.prdDescriptionLbl.text = groceryItem.descriptions
         self.prdPriceLbl.text = "$ \(groceryItem.price)"
+        self.addToBagClosure(usingViewModel: AddBagViewModel(prdId: groceryItem.id,
+                                                             title: "ADD TO BAG",
+                                                             stepValue: 0), bagClosure: addToBagClosure)
+    
     }
 }
 
@@ -245,11 +252,13 @@ extension HomeTableCell {
 
 //MARK: -
 struct AddBagViewModel {
+    let prdId: Int
     let title: String
     let stepValue: Int
     let showStepper: Bool
     
-    init(title: String, stepValue: Int){
+    init(prdId: Int, title: String, stepValue: Int){
+        self.prdId = prdId
         self.title = title
         self.stepValue = stepValue
         self.showStepper = stepValue > 0
@@ -261,16 +270,16 @@ struct AddBagViewModel {
 extension AddBagViewModel {
     
     func onAddtoBag() -> AddBagViewModel {
-        return AddBagViewModel(title: self.title, stepValue: 1)
+        return AddBagViewModel(prdId: self.prdId ,title: self.title, stepValue: 1)
     }
     
     func onIncrement() -> AddBagViewModel {
         guard self.stepValue < 10 else { return self}
-        return AddBagViewModel(title: self.title, stepValue: self.stepValue + 1)
+        return AddBagViewModel(prdId: self.prdId, title: self.title, stepValue: self.stepValue + 1)
     }
     
     func onDecrement() -> AddBagViewModel {
-        return AddBagViewModel(title: self.title, stepValue: self.stepValue - 1)
+        return AddBagViewModel(prdId: self.prdId, title: self.title, stepValue: self.stepValue - 1)
     }
     
 }

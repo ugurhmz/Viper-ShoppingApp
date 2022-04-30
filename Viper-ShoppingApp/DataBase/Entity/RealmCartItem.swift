@@ -11,7 +11,7 @@ import RealmSwift
 
 class RealmCartItem: Object {
     
-    @objc dynamic var prdId: String = ""
+    @objc dynamic var prdId: Int = 0
     @objc dynamic var value: Int = 0
     @objc dynamic var updated: Date = Date()
     

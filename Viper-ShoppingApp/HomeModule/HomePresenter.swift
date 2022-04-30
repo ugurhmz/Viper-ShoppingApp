@@ -56,7 +56,7 @@ class HomePresenter: HomePresenterProtocol {
             print("Add to cart updated with result = \(updated)")
             
             DispatchQueue.main.async {
-                // Respond back to UI sayins updated
+                // let's implement a spinner for this one
             }
         }
     }
@@ -69,12 +69,14 @@ class HomePresenter: HomePresenterProtocol {
 
 //MARK: -
 struct GroceryItemGenerator {
+    public var id: Int
     public var title : String
     public var prdImage : String
     public var descriptions : String
     public var price : Double
     
     init(using groceryModel: GroceryInfo){
+        self.id = groceryModel.id ?? 0
         self.title = groceryModel.title ?? "-"
         self.descriptions = groceryModel.descriptions ?? "-"
         self.prdImage = groceryModel.prdImage ?? "-"

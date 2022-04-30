@@ -12,14 +12,15 @@ import UIKit
 
 class TopHeaderUIView: UIView {
 
-    private let topTextLbl: UILabel = {
-        let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 36)
-        label.text = "Fresh Groceries"
-        label.textColor = UIColor(red: 255/255, green: 58/255, blue: 80/255, alpha: 1)
-        label.numberOfLines = 0
+  
+    
+    private let topImgView: UIImageView = {
+        let iv = UIImageView()
+        iv.image = UIImage(named: "groceryheader")
+        iv.clipsToBounds = true
+        iv.contentMode = .scaleAspectFill
         
-        return label
+        return iv
     }()
     
     override init(frame: CGRect) {
@@ -32,13 +33,18 @@ class TopHeaderUIView: UIView {
     }
        
     private func setupViews(){
-        [topTextLbl].forEach { addSubview($0) }
+        [topImgView].forEach { addSubview($0) }
            
-        topTextLbl.anchor(top: topAnchor,
+        topImgView.layer.borderWidth = 1
+        topImgView.layer.borderColor = UIColor.black.cgColor
+        topImgView.layer.cornerRadius = 20
+       
+        topImgView.backgroundColor   = .lightGray
+        topImgView.anchor(top: topAnchor,
                           leading: leadingAnchor,
                           bottom: bottomAnchor,
                           trailing: trailingAnchor,
-                          padding: .init(top: 0, left: 30, bottom: 10, right: 0)
+                          padding: .init(top: 10, left: 10, bottom: 5, right: 10)
         )
      }
 }

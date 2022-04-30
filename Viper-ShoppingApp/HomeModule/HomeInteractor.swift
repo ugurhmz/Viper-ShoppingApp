@@ -8,7 +8,7 @@
 import Foundation
 
 
-typealias PrdItem = (prdId: String, quantity: Int)
+typealias PrdItem = (prdId: Int, quantity: Int)
 
 protocol HomeInteractorProtocol {
     //func getTitleFromDB() -> HomeModel

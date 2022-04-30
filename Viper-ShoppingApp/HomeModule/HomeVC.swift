@@ -56,12 +56,14 @@ class HomeVC: UIViewController {
     private func setupConfigure(){
         self.presenter.viewDidLoad()
         
+        
         topHeaderView = TopHeaderUIView(frame: CGRect(x: 0,
                                                       y: 0,
-                                                      width: view.bounds.width,
-                                                      height: 70))
+                                                      width: tableView.bounds.width,
+                                                      height: 300))
         
-        //tableView.tableHeaderView = topHeaderView
+       
+        tableView.tableHeaderView = topHeaderView
     }
 
 }
@@ -97,14 +99,30 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
           let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableCell.identifier,
                                                    for: indexPath) as! HomeTableCell
         
-        cell.configure(groceryItem: self.groceryItemList[indexPath.row])
-            
         
-        // add to bag trigger
-        let viewModel = AddBagViewModel(title: "Add to bag", stepValue: 0)
-        cell.addToBagClosure(usingViewModel: viewModel) { (val) in
-            print("val \(val)")
-        }
+        cell.configure(groceryItem: self.groceryItemList[indexPath.row], addToBagClosure: { val in
+            let myprdItem: PrdItem =  (prdId: val.prdId , quantity: val.stepValue)
+            print("id: \(val.prdId),  quantity: \(val.stepValue)")
+            self.presenter.onAddToCart(prdItem: myprdItem)
+        })
+
+
+//        let myid = Int(self.groceryItemList[indexPath.row].id)
+//
+//        // add to bag trigger
+//        let viewModel = AddBagViewModel(prdId: myid
+//                                        ,title: "Add to bag",
+//                                        stepValue: 0)
+//
+//
+//        cell.addToBagClosure(usingViewModel: viewModel) { (val) in
+//            print("val \(val.prdId ) \(val.stepValue)")
+//            let myprdItem: PrdItem =  (prdId: val.prdId , quantity: val.stepValue)
+//            print(myprdItem)
+//            self.presenter.onAddToCart(prdItem: myprdItem)
+//        }
+//
+        
         
         cell.layer.borderWidth = 0.6
         cell.layer.borderColor = UIColor.lightGray.cgColor
@@ -115,4 +133,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
           return 150
     }
+    
+   
+    
 }
