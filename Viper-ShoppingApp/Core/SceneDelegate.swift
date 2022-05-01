@@ -11,16 +11,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
       
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        let initVC = HomeBuilder.createModule(usingNavigationFactory: NavigationBuilder.build)
-        window?.rootViewController = initVC
+        let submodules = (
+            home: HomeBuilder.createModule(usingNavigationFactory: NavigationBuilder.build),
+            cart: CartModuleBuilder.build(usingNavigationFactory: NavigationBuilder.build) ,
+            profile: ProfileModuleBuilder.build(usingNavigationFactory: NavigationBuilder.build))
+        
+        let tabBarController = TabBarModuleBuilder.build(usingSubmodules: submodules)
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
     }
+    
+    
+    
+    
+// ilk haliyle.
+//    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+//
+//        guard let windowScene = (scene as? UIWindowScene) else { return }
+//
+//        window = UIWindow(windowScene: windowScene)
+//        let initVC = HomeBuilder.createModule(usingNavigationFactory: NavigationBuilder.build)
+//        window?.rootViewController = initVC
+//        window?.makeKeyAndVisible()
+//    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

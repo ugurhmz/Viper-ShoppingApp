@@ -10,7 +10,7 @@ import UIKit
 
 class HomeBuilder {
     
-    static func createModule(usingNavigationFactory factory: NavigationFactory) -> UINavigationController {
+    static func createModule(usingNavigationFactory factory: NavigationFactory) -> UIViewController {
         //let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         //let view = storyboard.instantiateViewController(withIdentifier: "homeVC") as! HomeVC
         

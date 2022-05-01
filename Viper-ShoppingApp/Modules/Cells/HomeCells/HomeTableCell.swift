@@ -207,7 +207,8 @@ extension HomeTableCell {
         self.prdPriceLbl.text = "$ \(groceryItem.price)"
         self.addToBagClosure(usingViewModel: AddBagViewModel(prdId: groceryItem.id,
                                                              title: "ADD TO BAG",
-                                                             stepValue: 0), bagClosure: addToBagClosure)
+                                                             stepValue: 0),
+                                                          bagClosure: addToBagClosure)
     
     }
 }

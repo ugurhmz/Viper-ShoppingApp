@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63885DE6281ECA0B00CA12A3 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63885DE5281ECA0B00CA12A3 /* CartVC.swift */; };
+		63885DE8281ECB4C00CA12A3 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63885DE7281ECB4C00CA12A3 /* Cart.storyboard */; };
+		63885DEA281ECB6100CA12A3 /* CartyModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63885DE9281ECB6100CA12A3 /* CartyModuleBuilder.swift */; };
+		63885DED281ED23E00CA12A3 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63885DEC281ED23E00CA12A3 /* ProfileVC.swift */; };
+		63885DEF281ED25400CA12A3 /* ProfileModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63885DEE281ED25400CA12A3 /* ProfileModuleBuilder.swift */; };
+		63885DF1281ED2D600CA12A3 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63885DF0281ED2D600CA12A3 /* Profile.storyboard */; };
+		63885DF4281ED72200CA12A3 /* GroceryTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63885DF3281ED72200CA12A3 /* GroceryTabBarController.swift */; };
+		63885DF6281ED73500CA12A3 /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63885DF5281ED73500CA12A3 /* TabBarRouter.swift */; };
+		63885DF8281ED74500CA12A3 /* TabBarModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63885DF7281ED74500CA12A3 /* TabBarModuleBuilder.swift */; };
 		63FD8280281C1383000CAB65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD827F281C1383000CAB65 /* AppDelegate.swift */; };
 		63FD8282281C1383000CAB65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD8281281C1383000CAB65 /* SceneDelegate.swift */; };
 		63FD8284281C1383000CAB65 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD8283281C1383000CAB65 /* HomeVC.swift */; };
@@ -31,6 +40,15 @@
 
 /* Begin PBXFileReference section */
 		15B67B5349EDE52B8513236C /* Pods-Viper-ShoppingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viper-ShoppingApp.release.xcconfig"; path = "Target Support Files/Pods-Viper-ShoppingApp/Pods-Viper-ShoppingApp.release.xcconfig"; sourceTree = "<group>"; };
+		63885DE5281ECA0B00CA12A3 /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
+		63885DE7281ECB4C00CA12A3 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
+		63885DE9281ECB6100CA12A3 /* CartyModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartyModuleBuilder.swift; sourceTree = "<group>"; };
+		63885DEC281ED23E00CA12A3 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		63885DEE281ED25400CA12A3 /* ProfileModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModuleBuilder.swift; sourceTree = "<group>"; };
+		63885DF0281ED2D600CA12A3 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		63885DF3281ED72200CA12A3 /* GroceryTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryTabBarController.swift; sourceTree = "<group>"; };
+		63885DF5281ED73500CA12A3 /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
+		63885DF7281ED74500CA12A3 /* TabBarModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModuleBuilder.swift; sourceTree = "<group>"; };
 		63FD827C281C1383000CAB65 /* Viper-ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Viper-ShoppingApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FD827F281C1383000CAB65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63FD8281281C1383000CAB65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +95,49 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		63885DE3281EC9B200CA12A3 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				63885DF2281ED6F400CA12A3 /* TabBar */,
+				63885DEB281ED1C800CA12A3 /* ProfileModule */,
+				63FD8296281C1418000CAB65 /* Navigation */,
+				63FD8297281C14DB000CAB65 /* Cells */,
+				63885DE4281ECA0100CA12A3 /* CartModule */,
+				63FD8295281C1409000CAB65 /* HomeModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		63885DE4281ECA0100CA12A3 /* CartModule */ = {
+			isa = PBXGroup;
+			children = (
+				63885DE5281ECA0B00CA12A3 /* CartVC.swift */,
+				63885DE7281ECB4C00CA12A3 /* Cart.storyboard */,
+				63885DE9281ECB6100CA12A3 /* CartyModuleBuilder.swift */,
+			);
+			path = CartModule;
+			sourceTree = "<group>";
+		};
+		63885DEB281ED1C800CA12A3 /* ProfileModule */ = {
+			isa = PBXGroup;
+			children = (
+				63885DEC281ED23E00CA12A3 /* ProfileVC.swift */,
+				63885DEE281ED25400CA12A3 /* ProfileModuleBuilder.swift */,
+				63885DF0281ED2D600CA12A3 /* Profile.storyboard */,
+			);
+			path = ProfileModule;
+			sourceTree = "<group>";
+		};
+		63885DF2281ED6F400CA12A3 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				63885DF3281ED72200CA12A3 /* GroceryTabBarController.swift */,
+				63885DF5281ED73500CA12A3 /* TabBarRouter.swift */,
+				63885DF7281ED74500CA12A3 /* TabBarModuleBuilder.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		63FD8273281C1383000CAB65 = {
 			isa = PBXGroup;
 			children = (
@@ -99,15 +160,12 @@
 			isa = PBXGroup;
 			children = (
 				63FD82B2281C28D2000CAB65 /* products.json */,
-				63FD82BE281C4038000CAB65 /* Control */,
 				63FD82B4281C3608000CAB65 /* DataBase */,
-				63FD8296281C1418000CAB65 /* Navigation */,
 				63FD8299281C14E8000CAB65 /* Network */,
 				63FD8298281C14E1000CAB65 /* Extension */,
-				63FD8297281C14DB000CAB65 /* Cells */,
+				63885DE3281EC9B200CA12A3 /* Modules */,
 				63FD8294281C1403000CAB65 /* Model */,
 				63FD8293281C13FD000CAB65 /* Core */,
-				63FD8295281C1409000CAB65 /* HomeModule */,
 			);
 			path = "Viper-ShoppingApp";
 			sourceTree = "<group>";
@@ -203,13 +261,6 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		63FD82BE281C4038000CAB65 /* Control */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Control;
-			sourceTree = "<group>";
-		};
 		B9110A2529A7A142ADD1BBB1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +330,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				63FD8289281C1384000CAB65 /* Assets.xcassets in Resources */,
+				63885DE8281ECB4C00CA12A3 /* Cart.storyboard in Resources */,
+				63885DF1281ED2D600CA12A3 /* Profile.storyboard in Resources */,
 				63FD82B3281C28D2000CAB65 /* products.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,21 +385,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63885DED281ED23E00CA12A3 /* ProfileVC.swift in Sources */,
 				63FD82AA281C1A0E000CAB65 /* HomeTableCell.swift in Sources */,
 				63FD82A5281C1823000CAB65 /* WebService.swift in Sources */,
 				63FD82B6281C362C000CAB65 /* RealmDataBase.swift in Sources */,
+				63885DEA281ECB6100CA12A3 /* CartyModuleBuilder.swift in Sources */,
 				63FD82AC281C1A32000CAB65 /* Extension+UIView.swift in Sources */,
 				63FD82A7281C1887000CAB65 /* GroceryModel.swift in Sources */,
+				63885DF4281ED72200CA12A3 /* GroceryTabBarController.swift in Sources */,
 				63FD8284281C1383000CAB65 /* HomeVC.swift in Sources */,
 				63FD82A3281C1618000CAB65 /* NavigationBuilder.swift in Sources */,
+				63885DF6281ED73500CA12A3 /* TabBarRouter.swift in Sources */,
 				63FD82AE281C237F000CAB65 /* TopHeaderUIView.swift in Sources */,
 				63FD82BB281C3859000CAB65 /* RealmCartItem.swift in Sources */,
+				63885DF8281ED74500CA12A3 /* TabBarModuleBuilder.swift in Sources */,
 				63FD829F281C1553000CAB65 /* HomeRouter.swift in Sources */,
 				63FD8280281C1383000CAB65 /* AppDelegate.swift in Sources */,
 				63FD82A1281C1564000CAB65 /* HomeBuilder.swift in Sources */,
 				63FD82BD281C38EA000CAB65 /* CartItemModel.swift in Sources */,
 				63FD8282281C1383000CAB65 /* SceneDelegate.swift in Sources */,
+				63885DE6281ECA0B00CA12A3 /* CartVC.swift in Sources */,
 				63FD82B8281C3686000CAB65 /* CartDbProtocol.swift in Sources */,
+				63885DEF281ED25400CA12A3 /* ProfileModuleBuilder.swift in Sources */,
 				63FD829D281C1547000CAB65 /* HomePresenter.swift in Sources */,
 				63FD829B281C1534000CAB65 /* HomeInteractor.swift in Sources */,
 			);

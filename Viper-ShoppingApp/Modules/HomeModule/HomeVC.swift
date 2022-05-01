@@ -60,7 +60,7 @@ class HomeVC: UIViewController {
         topHeaderView = TopHeaderUIView(frame: CGRect(x: 0,
                                                       y: 0,
                                                       width: tableView.bounds.width,
-                                                      height: 300))
+                                                      height: 400 ))
         
        
         tableView.tableHeaderView = topHeaderView

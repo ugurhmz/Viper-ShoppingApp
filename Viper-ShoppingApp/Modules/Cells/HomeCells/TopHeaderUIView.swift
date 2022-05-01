@@ -34,17 +34,11 @@ class TopHeaderUIView: UIView {
        
     private func setupViews(){
         [topImgView].forEach { addSubview($0) }
-           
-        topImgView.layer.borderWidth = 1
-        topImgView.layer.borderColor = UIColor.black.cgColor
-        topImgView.layer.cornerRadius = 20
-       
-        topImgView.backgroundColor   = .lightGray
         topImgView.anchor(top: topAnchor,
                           leading: leadingAnchor,
                           bottom: bottomAnchor,
                           trailing: trailingAnchor,
-                          padding: .init(top: 10, left: 10, bottom: 5, right: 10)
+                          padding: .init(top: 0, left: 0, bottom: 5, right: 0)
         )
      }
 }
