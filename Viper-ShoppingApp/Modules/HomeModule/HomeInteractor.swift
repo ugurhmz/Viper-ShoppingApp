@@ -10,14 +10,8 @@ import Foundation
 
 typealias PrdItem = (prdId: Int, quantity: Int)
 
-protocol HomeInteractorProtocol {
-    //func getTitleFromDB() -> HomeModel
-    func getGroceries(completion: GroceriesClosure) -> (Void)
-    func addToCart(prdItem: PrdItem) -> (Bool)
-}
 
-
-class HomeInteractor: HomeInteractorProtocol {
+class HomeInteractor{
     
     var service: GroceriesAPI
     var database: CartDbProtocol
@@ -36,10 +30,7 @@ class HomeInteractor: HomeInteractorProtocol {
     }
     
     
-    // addToCart
-    func addToCart(prdItem: PrdItem) -> Bool {
-       return self.database.updateCart(using: CartItemModel(prdId: prdItem.prdId, value: prdItem.quantity))
-    }
+    
 
 }
 

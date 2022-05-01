@@ -18,9 +18,16 @@ class HomeBuilder {
         view.title = "Fresh Groceries"
         
         // class's
-        let interactor = HomeInteractor(service: WebService.shared, database: RealmDataBase.shared)
+        let homeInteractor = HomeInteractor(service: WebService.shared, database: RealmDataBase.shared)
         let router = HomeRouter(view: view)
-        let presenter = HomePresenter(view: view, interactor: interactor, router:  router)
+        
+        let cartInteractor = CartInteractor(database: RealmDataBase.shared)
+        let presenter = HomePresenter(view: view, useCase: (
+            getGroceries: homeInteractor.getGroceries,
+            addToCart: cartInteractor.addToCart,
+            getCartItem: cartInteractor.getCartItem
+                
+        ), router:  router)
         
         view.presenter = presenter
         return factory(view)

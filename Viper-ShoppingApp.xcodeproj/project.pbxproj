@@ -16,6 +16,8 @@
 		63885DF4281ED72200CA12A3 /* GroceryTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63885DF3281ED72200CA12A3 /* GroceryTabBarController.swift */; };
 		63885DF6281ED73500CA12A3 /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63885DF5281ED73500CA12A3 /* TabBarRouter.swift */; };
 		63885DF8281ED74500CA12A3 /* TabBarModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63885DF7281ED74500CA12A3 /* TabBarModuleBuilder.swift */; };
+		63885DFA281EE7A400CA12A3 /* CartInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63885DF9281EE7A400CA12A3 /* CartInteractor.swift */; };
+		63885DFE281F011B00CA12A3 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63885DFD281F011B00CA12A3 /* TabBarPresenter.swift */; };
 		63FD8280281C1383000CAB65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD827F281C1383000CAB65 /* AppDelegate.swift */; };
 		63FD8282281C1383000CAB65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD8281281C1383000CAB65 /* SceneDelegate.swift */; };
 		63FD8284281C1383000CAB65 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD8283281C1383000CAB65 /* HomeVC.swift */; };
@@ -49,6 +51,8 @@
 		63885DF3281ED72200CA12A3 /* GroceryTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryTabBarController.swift; sourceTree = "<group>"; };
 		63885DF5281ED73500CA12A3 /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
 		63885DF7281ED74500CA12A3 /* TabBarModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModuleBuilder.swift; sourceTree = "<group>"; };
+		63885DF9281EE7A400CA12A3 /* CartInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartInteractor.swift; sourceTree = "<group>"; };
+		63885DFD281F011B00CA12A3 /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
 		63FD827C281C1383000CAB65 /* Viper-ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Viper-ShoppingApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FD827F281C1383000CAB65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63FD8281281C1383000CAB65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 				63885DE5281ECA0B00CA12A3 /* CartVC.swift */,
 				63885DE7281ECB4C00CA12A3 /* Cart.storyboard */,
 				63885DE9281ECB6100CA12A3 /* CartyModuleBuilder.swift */,
+				63885DF9281EE7A400CA12A3 /* CartInteractor.swift */,
 			);
 			path = CartModule;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 				63885DF3281ED72200CA12A3 /* GroceryTabBarController.swift */,
 				63885DF5281ED73500CA12A3 /* TabBarRouter.swift */,
 				63885DF7281ED74500CA12A3 /* TabBarModuleBuilder.swift */,
+				63885DFD281F011B00CA12A3 /* TabBarPresenter.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -396,8 +402,10 @@
 				63FD8284281C1383000CAB65 /* HomeVC.swift in Sources */,
 				63FD82A3281C1618000CAB65 /* NavigationBuilder.swift in Sources */,
 				63885DF6281ED73500CA12A3 /* TabBarRouter.swift in Sources */,
+				63885DFA281EE7A400CA12A3 /* CartInteractor.swift in Sources */,
 				63FD82AE281C237F000CAB65 /* TopHeaderUIView.swift in Sources */,
 				63FD82BB281C3859000CAB65 /* RealmCartItem.swift in Sources */,
+				63885DFE281F011B00CA12A3 /* TabBarPresenter.swift in Sources */,
 				63885DF8281ED74500CA12A3 /* TabBarModuleBuilder.swift in Sources */,
 				63FD829F281C1553000CAB65 /* HomeRouter.swift in Sources */,
 				63FD8280281C1383000CAB65 /* AppDelegate.swift in Sources */,

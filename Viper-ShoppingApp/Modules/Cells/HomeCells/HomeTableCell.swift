@@ -19,7 +19,7 @@ class HomeTableCell: UITableViewCell {
     
     var closure: BagClosure?
     
-    var viewModel: AddBagViewModel! {
+    var viewModel: CartValueViewModel! {
         didSet {
             let isHidden =  viewModel.showStepper
             
@@ -163,7 +163,7 @@ class HomeTableCell: UITableViewCell {
     
     
     //add to bag closure
-    func addToBagClosure(usingViewModel viewModel: AddBagViewModel,
+    func addToBagClosure(usingViewModel viewModel: CartValueViewModel,
                          bagClosure: @escaping BagClosure) -> Void {
         
         self.viewModel = viewModel
@@ -205,9 +205,7 @@ extension HomeTableCell {
         self.prdImageStr = groceryItem.prdImage
         self.prdDescriptionLbl.text = groceryItem.descriptions
         self.prdPriceLbl.text = "$ \(groceryItem.price)"
-        self.addToBagClosure(usingViewModel: AddBagViewModel(prdId: groceryItem.id,
-                                                             title: "ADD TO BAG",
-                                                             stepValue: 0),
+        self.addToBagClosure(usingViewModel: groceryItem.cartValue,
                                                           bagClosure: addToBagClosure)
     
     }
@@ -252,15 +250,15 @@ extension HomeTableCell {
 
 
 //MARK: -
-struct AddBagViewModel {
+struct CartValueViewModel {
     let prdId: Int
     let title: String
     let stepValue: Int
     let showStepper: Bool
     
-    init(prdId: Int, title: String, stepValue: Int){
+    init(prdId: Int, stepValue: Int){
         self.prdId = prdId
-        self.title = title
+        self.title = "ADD TO BAG"
         self.stepValue = stepValue
         self.showStepper = stepValue > 0
     }
@@ -268,19 +266,19 @@ struct AddBagViewModel {
 
 
 //MARK: -
-extension AddBagViewModel {
+extension CartValueViewModel {
     
-    func onAddtoBag() -> AddBagViewModel {
-        return AddBagViewModel(prdId: self.prdId ,title: self.title, stepValue: 1)
+    func onAddtoBag() -> CartValueViewModel {
+        return CartValueViewModel(prdId: self.prdId , stepValue: 1)
     }
     
-    func onIncrement() -> AddBagViewModel {
+    func onIncrement() -> CartValueViewModel {
         guard self.stepValue < 10 else { return self}
-        return AddBagViewModel(prdId: self.prdId, title: self.title, stepValue: self.stepValue + 1)
+        return CartValueViewModel(prdId: self.prdId,  stepValue: self.stepValue + 1)
     }
     
-    func onDecrement() -> AddBagViewModel {
-        return AddBagViewModel(prdId: self.prdId, title: self.title, stepValue: self.stepValue - 1)
+    func onDecrement() -> CartValueViewModel {
+        return CartValueViewModel(prdId: self.prdId, stepValue: self.stepValue - 1)
     }
     
 }

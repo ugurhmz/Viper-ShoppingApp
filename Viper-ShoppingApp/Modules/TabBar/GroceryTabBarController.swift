@@ -8,6 +8,11 @@
 import UIKit
 
 
+protocol TabBarViewProtocol: AnyObject {
+    func updateCartCount(count: Int)
+}
+
+
 typealias GroceryTabs = (
     home: UIViewController,
     cart: UIViewController,
@@ -18,7 +23,13 @@ typealias GroceryTabs = (
 class GroceryTabBarController: UITabBarController {
 
     
-    init(tabs: GroceryTabs) {
+    var cartTab: UIViewController
+    var presenter: TabBarPreserProtocol?
+    
+    
+    init(tabs: GroceryTabs, presenter: TabBarPreserProtocol) {
+        self.presenter = presenter
+        self.cartTab = tabs.cart
         super.init(nibName: nil, bundle: nil)
         viewControllers = [tabs.home, tabs.cart, tabs.profile]
     }
@@ -31,6 +42,17 @@ class GroceryTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.presenter?.viewDidLoad()
     }
    
+}
+
+
+//MARK: -
+extension GroceryTabBarController: TabBarViewProtocol {
+    
+    func updateCartCount(count: Int) {
+        self.cartTab.tabBarItem.badgeValue =  count > 0 ? "\(count)" : nil
+    }
+    
 }

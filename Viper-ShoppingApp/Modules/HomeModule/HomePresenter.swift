@@ -17,12 +17,18 @@ class HomePresenter: HomePresenterProtocol {
     
     
     weak var view: HomeViewProtocol?
-    var interactor: HomeInteractorProtocol
+    typealias UseCase = (
+        getGroceries:  (_ completion: (GroceryResult) -> (Void)) -> Void,
+        addToCart: (PrdItem) -> Bool,
+        getCartItem: (Int) -> CartItemModel
+    )
     var router: HomeRouterProtocol
     
-    init(view: HomeViewProtocol, interactor: HomeInteractorProtocol, router: HomeRouterProtocol){
+    var useCase: UseCase?
+    
+    init(view: HomeViewProtocol, useCase: HomePresenter.UseCase, router: HomeRouterProtocol){
         self.view = view
-        self.interactor = interactor
+        self.useCase = useCase
         self.router = router
         
     }
@@ -31,10 +37,10 @@ class HomePresenter: HomePresenterProtocol {
     func viewDidLoad() {
         
         DispatchQueue.global(qos: .background).async { [weak self] in
-            self?.interactor.getGroceries(completion: { (result) in
-                print(result)
-                let groceryList = result.groceries.compactMap({
-                    GroceryItemGenerator(using: $0)
+            self?.useCase?.getGroceries({ (result) in
+                let groceryList = result.groceries.compactMap({ grocery -> GroceryItemGenerator in
+                    let cartItem = self?.useCase?.getCartItem(grocery.id ?? 0)
+                    return GroceryItemGenerator(using: grocery, cartItem: cartItem!)
                 })
                 
                 // update to view
@@ -52,7 +58,7 @@ class HomePresenter: HomePresenterProtocol {
     func onAddToCart(prdItem: PrdItem) -> Void {
         
         DispatchQueue.global(qos: .background).async {
-            let updated = self.interactor.addToCart(prdItem: prdItem)
+            let updated = self.useCase?.addToCart(prdItem)
             print("Add to cart updated with result = \(updated)")
             
             DispatchQueue.main.async {
@@ -74,12 +80,14 @@ struct GroceryItemGenerator {
     public var prdImage : String
     public var descriptions : String
     public var price : Double
+    public var cartValue: CartValueViewModel
     
-    init(using groceryModel: GroceryInfo){
+    init(using groceryModel: GroceryInfo, cartItem: CartItemModel){
         self.id = groceryModel.id ?? 0
         self.title = groceryModel.title ?? "-"
         self.descriptions = groceryModel.descriptions ?? "-"
         self.prdImage = groceryModel.prdImage ?? "-"
         self.price = groceryModel.price ?? 0
+        self.cartValue = CartValueViewModel(prdId: cartItem.prdId, stepValue: cartItem.value)
     }
 }
