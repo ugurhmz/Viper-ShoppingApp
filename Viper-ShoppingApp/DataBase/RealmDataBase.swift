@@ -11,6 +11,18 @@ import RealmSwift
 
 class RealmDataBase: CartDbProtocol {
     
+    
+    static let shared: RealmDataBase = RealmDataBase()
+    var notificationToken: NotificationToken?
+    private init() {}
+    
+    
+    deinit {
+        notificationToken?.invalidate()
+    }
+
+    
+   
     func gertCartItem(usingPrdId prdId: Int) -> CartItemModel {
         let realm = try! Realm()
         
@@ -23,16 +35,10 @@ class RealmDataBase: CartDbProtocol {
     
     
     
-    
-    static let shared: RealmDataBase = RealmDataBase()
-    var notificationToken: NotificationToken?
-    private init() {}
-    
-    
-    deinit {
-        notificationToken?.invalidate()
+    func valArtir(){
+        
     }
-
+    
     //MARK: - UPDATE CART
     func updateCart(using cartItem: CartItemModel) -> (Bool) {
         
@@ -82,7 +88,6 @@ class RealmDataBase: CartDbProtocol {
         
         let realm = try! Realm()
         let results = realm.objects(RealmCartItem.self)
-        
         notificationToken = results.observe({ _ in
             closure(results.count)
         })

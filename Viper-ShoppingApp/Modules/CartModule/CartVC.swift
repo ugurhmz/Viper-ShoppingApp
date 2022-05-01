@@ -10,5 +10,12 @@ import UIKit
 
 
 class CartVC: UIViewController {
+    var my: CartDbProtocol?
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+    }
     
 }

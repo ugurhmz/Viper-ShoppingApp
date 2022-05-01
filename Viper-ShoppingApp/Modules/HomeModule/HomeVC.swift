@@ -103,6 +103,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         cell.configure(groceryItem: self.groceryItemList[indexPath.row], addToBagClosure: { val in
             let myprdItem: PrdItem =  (prdId: val.prdId , quantity: val.stepValue)
             print("id: \(val.prdId),  quantity: \(val.stepValue)")
+          
             self.presenter.onAddToCart(prdItem: myprdItem)
         })
 

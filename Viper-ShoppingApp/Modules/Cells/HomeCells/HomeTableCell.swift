@@ -16,7 +16,6 @@ typealias BagClosure = ((prdId: Int, stepValue: Int)) -> ()
 
 class HomeTableCell: UITableViewCell {
     static var identifier = "HomeTableCell"
-    
     var closure: BagClosure?
     
     var viewModel: CartValueViewModel! {
@@ -131,11 +130,13 @@ class HomeTableCell: UITableViewCell {
     @objc func incrementBtn(){
         self.viewModel = viewModel.onIncrement()
         closure?((viewModel.prdId, viewModel.stepValue))
+        
     }
     
     @objc func decrementBtn(){
         self.viewModel = viewModel.onDecrement()
         closure?((viewModel.prdId, viewModel.stepValue))
+       
     }
     
     
@@ -199,7 +200,8 @@ class HomeTableCell: UITableViewCell {
 
 //MARK: -  Fill data
 extension HomeTableCell {
-    func configure(groceryItem: GroceryItemGenerator , addToBagClosure: @escaping BagClosure ){
+    func configure(groceryItem: GroceryItemGenerator ,
+                   addToBagClosure: @escaping BagClosure ){
         self.prdTitleLbl.text = groceryItem.title
         self.imgView.image = UIImage(named: "\(groceryItem.prdImage)")
         self.prdImageStr = groceryItem.prdImage
@@ -207,7 +209,7 @@ extension HomeTableCell {
         self.prdPriceLbl.text = "$ \(groceryItem.price)"
         self.addToBagClosure(usingViewModel: groceryItem.cartValue,
                                                           bagClosure: addToBagClosure)
-    
+        
     }
 }
 
@@ -261,6 +263,7 @@ struct CartValueViewModel {
         self.title = "ADD TO BAG"
         self.stepValue = stepValue
         self.showStepper = stepValue > 0
+       
     }
 }
 

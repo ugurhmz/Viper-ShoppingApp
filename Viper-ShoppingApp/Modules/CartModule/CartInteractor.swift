@@ -18,6 +18,8 @@ class CartInteractor {
         self.database = database
     }
     
+    
+    // getCartCount
     func getCartCount(closure: @escaping (Int) -> (Void) ) {
         self.database.getCount(closure: closure)
     }
@@ -32,6 +34,8 @@ class CartInteractor {
        return self.database.updateCart(using: CartItemModel(prdId: prdItem.prdId, value: prdItem.quantity))
     }
     
+    
+    // getCartItem
     func getCartItem(prdId: Int) -> CartItemModel {
         return self.database.gertCartItem(usingPrdId: prdId)
     }

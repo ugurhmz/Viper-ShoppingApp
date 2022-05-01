@@ -29,11 +29,9 @@ class TabBarPresenter: TabBarPreserProtocol {
     
     
     func viewDidLoad() {
-        
             self.useCase.getCartCount { count in
                     self.view?.updateCartCount(count: count)
             }
-        
         
     }
     
